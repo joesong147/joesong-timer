@@ -1,96 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joesong Timer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joesong Timer</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="main-container">
-        <!-- Control Panel -->
-        <div class="control-panel">
-            <div class="header">
-                <h1>⏱️ Joesong Timer</h1>
-                <p class="subtitle">Professional Countdown</p>
-            </div>
 
-            <!-- Title Section -->
-            <div class="input-section">
-                <label for="titleInput">Title</label>
-                <div class="input-row">
-                    <input type="text" id="titleInput" placeholder="Enter title" value="SUNDAY SERVICE" maxlength="60">
-                    <button id="titleBtn" class="btn-update">✓ Update</button>
-                </div>
-            </div>
+<div class="panel">
+    <h1>Joesong Timer</h1>
 
-            <!-- Message Section -->
-            <div class="input-section">
-                <label for="messageInput">Message</label>
-                <div class="input-row">
-                    <textarea id="messageInput" placeholder="Enter message" maxlength="200" rows="3">Welcome</textarea>
-                    <button id="messageBtn" class="btn-update">✓ Update</button>
-                </div>
-            </div>
-
-            <!-- Timer Duration Section -->
-            <div class="input-section">
-                <label>Set Duration</label>
-                <div class="time-controls">
-                    <div class="time-input-group">
-                        <label for="hoursInput">Hours</label>
-                        <input type="number" id="hoursInput" min="0" max="23" value="0">
-                    </div>
-                    <div class="time-input-group">
-                        <label for="minutesInput">Minutes</label>
-                        <input type="number" id="minutesInput" min="0" max="59" value="10">
-                    </div>
-                    <div class="time-input-group">
-                        <label for="secondsInput">Seconds</label>
-                        <input type="number" id="secondsInput" min="0" max="59" value="0">
-                    </div>
-                </div>
-                <button id="applyTimeBtn" class="btn-apply">Apply Time</button>
-            </div>
-
-            <!-- Quick Presets -->
-            <div class="input-section">
-                <label>Quick Presets</label>
-                <div class="presets">
-                    <button class="preset-btn" data-minutes="5">5 min</button>
-                    <button class="preset-btn" data-minutes="10">10 min</button>
-                    <button class="preset-btn" data-minutes="15">15 min</button>
-                    <button class="preset-btn" data-minutes="20">20 min</button>
-                    <button class="preset-btn" data-minutes="30">30 min</button>
-                </div>
-            </div>
-
-            <!-- Control Buttons -->
-            <div class="controls">
-                <button id="startBtn" class="btn-start">▶ Start</button>
-                <button id="pauseBtn" class="btn-pause" style="display:none;">⏸ Pause</button>
-                <button id="stopBtn" class="btn-stop">⏹ Stop</button>
-                <button id="resetBtn" class="btn-reset">↺ Reset</button>
-            </div>
-
-            <!-- Projector Button -->
-            <button id="projBtn" class="btn-projector">🖥 Open Projector</button>
-            <div id="status" class="status-indicator">Ready</div>
-
-            <hr class="divider">
-
-            <!-- Live Preview -->
-            <div class="preview-section">
-                <h3>Live Preview</h3>
-                <div class="preview">
-                    <div id="pTitle" class="preview-title">SUNDAY SERVICE</div>
-                    <div id="pTimer" class="preview-timer">10:00</div>
-                    <div id="pMsg" class="preview-message">Welcome</div>
-                </div>
-            </div>
-        </div>
+    <label>Title</label>
+    <div class="row">
+        <input id="titleInput" value="SUNDAY SERVICE">
+        <button id="titleBtn">Update</button>
     </div>
 
-    <script src="script.js"></script>
+    <label>Message</label>
+    <div class="row">
+        <input id="messageInput" value="Welcome">
+        <button id="messageBtn">Update</button>
+    </div>
+
+    <label>Minutes</label>
+    <div class="row">
+        <input id="minutesInput" type="number" value="10" min="1">
+        <button id="timeBtn">Apply</button>
+    </div>
+
+    <div class="controls">
+        <button id="startBtn">▶ Start</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="stopBtn">■ Stop</button>
+        <button id="resetBtn">↺ Reset</button>
+        <button id="projBtn">🖥 Open Projector</button>
+    </div>
+
+    <div id="status">Stopped</div>
+
+    <hr>
+
+    <div class="preview">
+        <div id="pTitle"></div>
+        <div id="pTimer"></div>
+        <div id="pMsg"></div>
+    </div>
+</div>
+
+<!-- 🔥 MAIN SCRIPT (UPDATED VERSION MUST BE USED) -->
+<script src="script.js"></script>
+
 </body>
 </html>
