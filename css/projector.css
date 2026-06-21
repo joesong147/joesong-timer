@@ -1,0 +1,272 @@
+/* ============================================
+   JOESONG TIMER - PROJECTOR WINDOW STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: #000000;
+    --text-primary: #ffffff;
+    --timer-normal: #ffffff;
+    --timer-yellow: #facc15;
+    --timer-amber: #f59e0b;
+    --timer-red: #ff6b6b;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.projector-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-primary);
+}
+
+.projector-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   PROJECTOR TITLE
+   ============================================ */
+
+.projector-title {
+    font-size: 4vw;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    max-width: 90vw;
+    word-wrap: break-word;
+    line-height: 1.2;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ============================================
+   PROJECTOR TIMER
+   ============================================ */
+
+.projector-timer {
+    font-size: 18vw;
+    font-weight: 800;
+    color: var(--timer-normal);
+    font-family: 'Courier New', 'Monaco', monospace;
+    letter-spacing: 4px;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.projector-timer.timer-normal {
+    color: var(--timer-normal);
+    animation: none;
+}
+
+.projector-timer.timer-yellow {
+    color: var(--timer-yellow);
+    animation: none;
+}
+
+.projector-timer.timer-amber {
+    color: var(--timer-amber);
+    animation: flashAmber 1s infinite;
+}
+
+.projector-timer.timer-red {
+    color: var(--timer-red);
+    animation: flashRed 0.5s infinite;
+}
+
+@keyframes flashAmber {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes flashRed {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================================
+   PROJECTOR MESSAGE
+   ============================================ */
+
+.projector-message {
+    font-size: 3vw;
+    font-weight: 400;
+    color: var(--text-primary);
+    max-width: 85vw;
+    word-wrap: break-word;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ============================================
+   TIME UP DISPLAY
+   ============================================ */
+
+.time-up-display {
+    font-size: 20vw;
+    font-weight: 900;
+    color: var(--timer-red);
+    letter-spacing: 2px;
+    animation: pulseRed 0.6s infinite, fadeInScale 0.5s ease;
+}
+
+@keyframes pulseRed {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   TIME UP BACKGROUND
+   ============================================ */
+
+body.time-up-active {
+    background: linear-gradient(135deg, #ff6b6b, #ff4444);
+    animation: timeUpFlash 0.6s infinite;
+}
+
+@keyframes timeUpFlash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   THEME: BLUE
+   ============================================ */
+
+body.theme-blue {
+    --bg-primary: #001a4d;
+}
+
+body.theme-blue .projector-title,
+body.theme-blue .projector-message {
+    color: #ffffff;
+}
+
+body.theme-blue .projector-timer.timer-normal {
+    color: #60a5fa;
+}
+
+body.theme-blue .projector-timer.timer-yellow {
+    color: #fbbf24;
+}
+
+body.theme-blue .projector-timer.timer-amber {
+    color: #f59e0b;
+}
+
+body.theme-blue .projector-timer.timer-red {
+    color: #ef4444;
+}
+
+/* ============================================
+   THEME: GREEN
+   ============================================ */
+
+body.theme-green {
+    --bg-primary: #001a0f;
+}
+
+body.theme-green .projector-title,
+body.theme-green .projector-message {
+    color: #ffffff;
+}
+
+body.theme-green .projector-timer.timer-normal {
+    color: #4ade80;
+}
+
+body.theme-green .projector-timer.timer-yellow {
+    color: #fbbf24;
+}
+
+body.theme-green .projector-timer.timer-amber {
+    color: #f59e0b;
+}
+
+body.theme-green .projector-timer.timer-red {
+    color: #ef4444;
+}
+
+/* ============================================
+   THEME: LIGHT
+   ============================================ */
+
+body.theme-light {
+    --bg-primary: #ffffff;
+}
+
+body.theme-light .projector-title,
+body.theme-light .projector-message,
+body.theme-light .projector-timer.timer-normal {
+    color: #1a1a1a;
+}
+
+body.theme-light .projector-timer.timer-yellow {
+    color: #cc9900;
+}
+
+body.theme-light .projector-timer.timer-amber {
+    color: #cc6600;
+}
+
+body.theme-light .projector-timer.timer-red {
+    color: #cc0000;
+}
+
+body.theme-light .time-up-display {
+    color: #cc0000;
+}

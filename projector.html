@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joesong Timer - Projector</title>
+    <link rel="stylesheet" href="css/projector.css">
+</head>
+<body>
+    <div class="projector-container">
+        <div class="projector-content">
+            <div class="projector-title" id="projectorTitle">Waiting for input</div>
+            <div class="projector-timer" id="projectorTimer">00:00:00</div>
+            <div class="projector-message" id="projectorMessage"></div>
+            <div class="time-up-display" id="timeUpDisplay" style="display:none;">TIME UP</div>
+        </div>
+    </div>
+
+    <!-- Audio for alarm -->
+    <audio id="alarmAudio" src="sounds/bell.mp3"></audio>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/projector.js"></script>
+</body>
+</html>
